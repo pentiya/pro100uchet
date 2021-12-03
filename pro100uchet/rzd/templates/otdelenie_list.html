@@ -1,0 +1,16 @@
+<div>
+    <h1><a href="/rzd/otdelenie">Список отделений дороги</a></h1>
+</div>
+
+{{ otdelenies }}
+
+<tbody>
+{% for otdelenie in otdelenies %}
+  <tr>
+#    <div>
+        <<td>Отделение: {{ otdelenie.name }}</td>>
+        <<td><a href="">{{ otdelenie.name }}</a></td>
+#    </div>
+  </tr>
+{% endfor %}
+</tbody>

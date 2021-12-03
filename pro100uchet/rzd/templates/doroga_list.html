@@ -1,0 +1,16 @@
+<div>
+    <h1><a href="/rzd/doroga">Список дорог</a></h1>
+</div>
+
+{{ dorogas }}
+
+<tbody>
+{% for doroga in dorogas %}
+  <tr>
+#    <div>
+        <<td>Дорога: {{ doroga.name }}</td>>
+        <<td><a href="">{{ doroga.name }}</a></td>
+#    </div>
+  </tr>
+{% endfor %}
+</tbody>
