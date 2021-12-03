@@ -1,0 +1,20 @@
+[
+{
+  "model": "rzd.otdelenie",
+  "pk": 1,
+  "fields": {
+    "name": "Московский",
+    "kod": 1,
+    "doroga": 1
+  }
+},
+{
+  "model": "rzd.otdelenie",
+  "pk": 2,
+  "fields": {
+    "name": "Санк-Петербургский",
+    "kod": 2,
+    "doroga": 1
+  }
+}
+]

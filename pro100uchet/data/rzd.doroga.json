@@ -1,0 +1,11 @@
+[
+{
+  "model": "rzd.doroga",
+  "pk": 1,
+  "fields": {
+    "name": "Октябрьская",
+    "kod": 1,
+    "short_name": "ОКТ"
+  }
+}
+]

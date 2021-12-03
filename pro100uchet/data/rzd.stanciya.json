@@ -1,0 +1,26 @@
+[
+{
+  "model": "rzd.stanciya",
+  "pk": 1,
+  "fields": {
+    "name": "Бологое-Московское",
+    "kod": 1,
+    "otdelenie": 1,
+    "rvc": 2,
+    "lon": 0.0,
+    "lat": 0.0
+  }
+},
+{
+  "model": "rzd.stanciya",
+  "pk": 2,
+  "fields": {
+    "name": "Сонково",
+    "kod": 2,
+    "otdelenie": 1,
+    "rvc": 2,
+    "lon": 0.0,
+    "lat": 0.0
+  }
+}
+]
