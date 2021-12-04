@@ -48,25 +48,25 @@ admin.site.register(OtdelenieAdmin)
 
 admin.site.register(Otdelenie)
 
-from .models import Stanciya
-#admin.site.register(Stanciya)
+from .models import Station
+#admin.site.register(Station)
 
 """
-class StanciyaResource(resources.ModelResource):
+class StationResource(resources.ModelResource):
     class Meta:
-        model = Stanciya
+        model = Station
 #        skip_unchanged = True
 #        report_skipped = False
 #        import_id_fields = ('kod',)
         fields = ('id', 'name', 'kod', 'otdelenie',)
 
-class StanciyaAdmin(ImportExportModelAdmin):
-    resource_class = StanciyaResource
+class StationAdmin(ImportExportModelAdmin):
+    resource_class = StationResource
 
-admin.site.register(StanciyaAdmin)
+admin.site.register(StationAdmin)
 """
 
-admin.site.register(Stanciya)
+admin.site.register(Station)
 
 from .models import Zdanie
 admin.site.register(Zdanie)

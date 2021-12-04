@@ -1,7 +1,7 @@
 #!/bin/sh
 
 options="--indent 2"
-tables="rzd.doroga rzd.otdelenie rzd.stanciya"
+tables="rzd.doroga rzd.otdelenie rzd.station"
 for table in $tables
 do
   echo domp table $table

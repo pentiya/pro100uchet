@@ -22,5 +22,17 @@
     "lon": 0.0,
     "lat": 0.0
   }
+},
+{
+  "model": "rzd.station",
+  "pk": 3,
+  "fields": {
+    "name": "Едрово",
+    "kod": 33,
+    "otdelenie": 1,
+    "rvc": 2,
+    "lon": 0.0,
+    "lat": 0.0
+  }
 }
 ]

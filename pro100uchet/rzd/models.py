@@ -31,7 +31,7 @@ class Otdelenie(models.Model):
         return self.name
 
 
-class Stanciya(models.Model):
+class Station(models.Model):
     name = models.CharField('Станция',max_length=255,)
     kod = models.IntegerField('Код станции',default=0)
     otdelenie = models.ForeignKey(Otdelenie, on_delete=models.PROTECT)
@@ -51,7 +51,7 @@ class Stanciya(models.Model):
 class Zdanie(models.Model):
     name = models.CharField('Здание',max_length=255,)
 #    kod = models.IntegerField(default=0)
-    Stanciya = models.ForeignKey(Stanciya, on_delete=models.PROTECT)
+    Station = models.ForeignKey(Station, on_delete=models.PROTECT)
 
     class Meta:
         ordering = ('name',)
