@@ -16,7 +16,7 @@ class Doroga(models.Model):
         return self.name
 
 
-class Otdelenie(models.Model):
+class Region(models.Model):
     name = models.CharField('Название региона',max_length=255,)
     kod  = models.IntegerField('Код региона',default=0)
 #    doroga = models.ForeignKey('Doroga', on_delete=models.PROTECT, blank=True, null=True)
@@ -34,7 +34,7 @@ class Otdelenie(models.Model):
 class Station(models.Model):
     name = models.CharField('Станция',max_length=255,)
     kod = models.IntegerField('Код станции',default=0)
-    otdelenie = models.ForeignKey(Otdelenie, on_delete=models.PROTECT)
+    region = models.ForeignKey(Region, on_delete=models.PROTECT)
     rvc = models.IntegerField('РВЦ',default=0)
     lon = models.FloatField('Долгота',default=0)
     lat = models.FloatField('Широта',default=0)

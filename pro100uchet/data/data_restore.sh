@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #options="--indent 2"
-tables="rzd.doroga rzd.otdelenie rzd.station"
+tables="auth.user rzd.doroga rzd.region rzd.station"
 for table in $tables
 do
   echo restore table $table

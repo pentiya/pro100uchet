@@ -29,24 +29,24 @@ admin.site.register(DorogaAdmin)
 admin.site.register(Doroga)
 
 
-from .models import Otdelenie
-#admin.site.register(Otdelenie)
+from .models import Region
+#admin.site.register(Region)
 
 """
-class OtdelenieResource(resources.ModelResource):
+class RegionResource(resources.ModelResource):
     class Meta:
-        model = Otdelenie
+        model = Region
 #        skip_unchanged = True
 #        report_skipped = False
 #        import_id_fields = ('kod',)
         fields = ('id', 'name', 'kod', 'doroga',)
 
-class OtdelenieAdmin(ImportExportModelAdmin):
-    resource_class = OtdelenieResource
-admin.site.register(OtdelenieAdmin)
+class RegionAdmin(ImportExportModelAdmin):
+    resource_class = RegionResource
+admin.site.register(RegionAdmin)
 """
 
-admin.site.register(Otdelenie)
+admin.site.register(Region)
 
 from .models import Station
 #admin.site.register(Station)
@@ -58,7 +58,7 @@ class StationResource(resources.ModelResource):
 #        skip_unchanged = True
 #        report_skipped = False
 #        import_id_fields = ('kod',)
-        fields = ('id', 'name', 'kod', 'otdelenie',)
+        fields = ('id', 'name', 'kod', 'Region',)
 
 class StationAdmin(ImportExportModelAdmin):
     resource_class = StationResource
@@ -74,7 +74,7 @@ admin.site.register(Zdanie)
 """
 # Register your models here.
 from .models import Doroga
-from .models import Otdelenie
+from .models import Region
 from .models import Station
 
 #admin.site.register(Doroga)
@@ -84,9 +84,9 @@ class DorogaAdmin(admin.ModelAdmin):
  #   list_filter = ('region')
  #   ordering = ('name')
 
-#admin.site.register(Otdelenie)
-@admin.register(Otdelenie)
-class OtdelenieAdmin(admin.ModelAdmin):
+#admin.site.register(Region)
+@admin.register(Region)
+class RegionAdmin(admin.ModelAdmin):
     list_display = ('name', 'kod', 'doroga')
  #   list_filter = ('region')
  #   ordering = ('name')
@@ -94,7 +94,7 @@ class OtdelenieAdmin(admin.ModelAdmin):
 #admin.site.register(Station)
 @admin.register(Station)
 class StationAdmin(admin.ModelAdmin):
-    list_display = ('name', 'kod', 'otdelenie')
+    list_display = ('name', 'kod', 'Region')
  #   list_filter = ('region')
  #   ordering = ('name')
 """

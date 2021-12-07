@@ -1,0 +1,56 @@
+[
+{
+  "model": "rzd.region",
+  "pk": 1,
+  "fields": {
+    "name": "Московский",
+    "kod": 1,
+    "doroga": 1
+  }
+},
+{
+  "model": "rzd.region",
+  "pk": 2,
+  "fields": {
+    "name": "Санк-Петербургский",
+    "kod": 2,
+    "doroga": 1
+  }
+},
+{
+  "model": "rzd.region",
+  "pk": 3,
+  "fields": {
+    "name": "Санкт-Петербург-Витебский",
+    "kod": 3,
+    "doroga": 1
+  }
+},
+{
+  "model": "rzd.region",
+  "pk": 4,
+  "fields": {
+    "name": "Петрозаводский",
+    "kod": 4,
+    "doroga": 1
+  }
+},
+{
+  "model": "rzd.region",
+  "pk": 5,
+  "fields": {
+    "name": "Мурманский",
+    "kod": 5,
+    "doroga": 1
+  }
+},
+{
+  "model": "rzd.region",
+  "pk": 6,
+  "fields": {
+    "name": "Волховстроевский",
+    "kod": 6,
+    "doroga": 1
+  }
+}
+]

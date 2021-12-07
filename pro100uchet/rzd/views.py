@@ -22,12 +22,9 @@ class StationListView(ListView):
 
 
 #from rzd.models import Doroga
-#from rzd.models import Otdelenie
+#from rzd.models import Region
 #from rzd.models import Station
 #from rzd.models import Zdanie
-
-
-
 
 
 
@@ -37,9 +34,9 @@ class StationListView(ListView):
 
 """
 
-def otdelenie_list(request):
-    otdelenies = otdelenie.objects.all()
-    return render(request, 'otdelenie_list.html', {'otdelenies':otdelenies})
+def region_list(request):
+    regions = Region.objects.all()
+    return render(request, 'Region_list.html', {'regions':regions})
 
 """
 """
@@ -59,7 +56,7 @@ def doroga_list(request):
 #    template_name = 'doroga.html'
 #    queryset = Service.objects.all().order_by('kod')
 #
-#class OtdelenieListView(ListView):
-#    model = Otdelenie
-#    template_name = 'otdelenie.html'
+#class RegionListView(ListView):
+#    model = Region
+#    template_name = 'Region.html'
 #    queryset = Service.objects.all().order_by('name')

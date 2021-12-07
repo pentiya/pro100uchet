@@ -5,7 +5,7 @@
   "fields": {
     "name": "Бологое-Московское",
     "kod": 1,
-    "otdelenie": 1,
+    "region": 1,
     "rvc": 2,
     "lon": 0.0,
     "lat": 0.0
@@ -17,7 +17,7 @@
   "fields": {
     "name": "Сонково",
     "kod": 2,
-    "otdelenie": 1,
+    "region": 1,
     "rvc": 2,
     "lon": 0.0,
     "lat": 0.0
@@ -29,7 +29,7 @@
   "fields": {
     "name": "Едрово",
     "kod": 33,
-    "otdelenie": 1,
+    "region": 1,
     "rvc": 2,
     "lon": 0.0,
     "lat": 0.0

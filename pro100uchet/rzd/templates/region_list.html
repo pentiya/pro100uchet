@@ -1,0 +1,16 @@
+<div>
+    <h1><a href="/rzd/region">Список регионов дороги</a></h1>
+</div>
+
+{{ regions }}
+
+<tbody>
+{% for region in regions %}
+  <tr>
+#    <div>
+        <<td>Отделение: {{ region.name }}</td>>
+        <<td><a href="">{{ region.name }}</a></td>
+#    </div>
+  </tr>
+{% endfor %}
+</tbody>
