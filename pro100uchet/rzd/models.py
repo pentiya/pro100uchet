@@ -34,6 +34,7 @@ class Region(models.Model):
 class Station(models.Model):
     name = models.CharField('Станция',max_length=255,)
     kod = models.IntegerField('Код станции',default=0)
+    csvt = models.IntegerField('Код АСУ ЦСВТ',default=0)
     region = models.ForeignKey(Region, on_delete=models.PROTECT)
     rvc = models.IntegerField('РВЦ',default=0)
     lon = models.FloatField('Долгота',default=0)
