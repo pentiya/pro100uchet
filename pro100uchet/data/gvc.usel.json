@@ -1,0 +1,12 @@
+[
+{
+  "model": "gvc.usel",
+  "pk": 1,
+  "fields": {
+    "name": "ТПУ-БОЛОГОЕ",
+    "ivc": 1,
+    "rivc": 2,
+    "station": 28
+  }
+}
+]

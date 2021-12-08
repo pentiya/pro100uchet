@@ -1,0 +1,20 @@
+[
+{
+  "model": "gvc.rivc",
+  "pk": 1,
+  "fields": {
+    "name": "Москва",
+    "kod": 1,
+    "ivc": 1
+  }
+},
+{
+  "model": "gvc.rivc",
+  "pk": 2,
+  "fields": {
+    "name": "Бологое",
+    "kod": 2,
+    "ivc": 1
+  }
+}
+]

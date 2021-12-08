@@ -1,7 +1,7 @@
 #!/bin/sh
 
 options="--indent 2"
-tables="auth.user rzd.doroga rzd.region rzd.station"
+tables="auth.user rzd.doroga rzd.region rzd.station gvc.ivc gvc.rivc gvc.usel"
 for table in $tables
 do
   echo domp table $table
