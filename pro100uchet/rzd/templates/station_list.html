@@ -1,19 +1,22 @@
 <div>
-    <h1><a href="/rzd/station/">Список станций</a></h1>
+    <h1><a href="/rzd/region_list">Список регионов дороги</a></h1>
+    <h1><a href="/rzd/station_list">Список станций дороги</a></h1>
 </div>
 
-{{ stations }}
+<!--{{ stations }}-->
 <table width=100%>
     <tr>
     <td>Станция</td>
     <td>Код</td>
     <td>Регион</td>
+    <td>РИВЦ</td>
     </tr>
 {% for station in stations %}
     <tr>
         <td><a href="">{{ station.name }}</a></td>
         <td>{{ station.kod }}</td>.
         <td><a href="">{{ station.region }}</a></td>
+        <td><a href="">{{ station.rvc }}</a></td>
         </p>
     </tr>
 {% endfor %}

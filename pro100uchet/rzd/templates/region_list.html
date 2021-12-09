@@ -1,16 +1,18 @@
 <div>
-    <h1><a href="/rzd/region">Список регионов дороги</a></h1>
+    <h1><a href="/rzd/region_list">Список регионов дороги</a></h1>
+    <h1><a href="/rzd/station_list">Список станций дороги</a></h1>
 </div>
 
-{{ regions }}
+
+<!--{{ regions }}-->
 
 <tbody>
 {% for region in regions %}
   <tr>
-#    <div>
-        <<td>Отделение: {{ region.name }}</td>>
-        <<td><a href="">{{ region.name }}</a></td>
-#    </div>
+    <div>
+        <td>Регион: {{ region.name }}</td>
+        <td><a href="">{{ region.name }}</a></td>
+    </div>
   </tr>
 {% endfor %}
 </tbody>
