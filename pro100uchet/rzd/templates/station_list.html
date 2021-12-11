@@ -1,23 +1,16 @@
-<div>
-    <h1><a href="/rzd/region_list">Список регионов дороги</a></h1>
-    <h1><a href="/rzd/station_list">Список станций дороги</a></h1>
-</div>
+{% extends "rzd_base.html" %}
 
-<!--{{ stations }}-->
-<table width=100%>
-    <tr>
-    <td>Станция</td>
-    <td>Код</td>
-    <td>Регион</td>
-    <td>РИВЦ</td>
-    </tr>
+{% block title %} Станции {% endblock %}
+
+{% block content %}
+<h3>Станции</h3>
+
 {% for station in stations %}
-    <tr>
-        <td><a href="">{{ station.name }}</a></td>
-        <td>{{ station.kod }}</td>.
-        <td><a href="">{{ station.region }}</a></td>
-        <td><a href="">{{ station.rvc }}</a></td>
-        </p>
-    </tr>
+<div>
+    <a href="">{{ station.name }} ( {{ station.kod }} )</a>
+    <a href="{% url 'region_list' %}">{{ station.region }}</a>
+    <a href="rivc_list">{{ station.rvc }}</a>
+<div>
 {% endfor %}
-</table>
+
+{% endblock %}

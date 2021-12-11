@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Добавление дороги : : Доска объявлений</title>
+</head>
+<body>
+<h1>Добавление дороги</h1>
+<div>
+<а href="{% url ’index’ %}">Главная</а>
+{% for doroga in dorogas %}
+<a href="{% url ’by_rubric’ rubric.pk %}”>
+{{ doroga.name }}</a>
+{% endfor %}
+</div>
+<form method=”post”>
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit” value=”Добавить">
+</form>
+</body>
+</html>

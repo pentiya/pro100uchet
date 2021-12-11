@@ -1,16 +1,16 @@
-<div>
-    <h1><a href="/rzd/doroga">Список дорог</a></h1>
-</div>
+{% extends "rzd_base.html" %}
 
-{{ dorogas }}
+{% block title %} Дороги {% endblock %}
 
-<tbody>
+{% block content %}
+
+<h3><a href="/rzd/oroga_add">Добавить дорогу</a></h3>
+
 {% for doroga in dorogas %}
-  <tr>
-#    <div>
-        <<td>Дорога: {{ doroga.name }}</td>>
-        <<td><a href="">{{ doroga.name }}</a></td>
-#    </div>
-  </tr>
+<div>
+    <a href="{% url 'region_list' %}">{{ doroga.name }} ({{doroga.kod}})</a>
+</div>
 {% endfor %}
-</tbody>
+
+{% endblock %}
+

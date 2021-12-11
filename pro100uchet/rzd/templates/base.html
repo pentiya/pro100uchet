@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta charset="UTF-8">
+	<title>{% block title %}Главная{% endblock %}Pro100uchet</title>
+    </head>
+    <body>
+	<header>
+	    <h1>Объявления</h1>
+	</header>
+	<nav>
+	    <a href=’’{% url ’index’ %}”>Главная</а>
+	    <a href=”{% url ’add’ %}”>Добавить</а>
+	    {% for region in regions %}
+		<a href=’’{% url ’by_region’ region.pk %}">
+		{{ region.name }}</a>
+	    {% endfor %}
+	</nav>
+	<section>
+	    {% block content %}
+	    {% endblock %}
+	</section>
+    </body>
+</html>

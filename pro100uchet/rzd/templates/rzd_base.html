@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>{% block title %}Главная{% endblock %}Pro100uchet</title>
+<!--link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"-->
+<style type="text/css">
+header h1 {
+font-size: 40pt;
+text-transform: uppercase;
+text-align: center;
+background: url("bg.jpg") left / auto 100% no-repeat;
+}
+nav {
+font-size: 16pt;
+width: 15Opx;
+float: left;
+}
+nav a {
+display: block;
+margin: 10px 0px;
+}
+section {
+margin-left: 170px;
+}
+
+</style>
+</head>
+<body>
+<header>
+<h2>РЖД Справочники</h2>
+</header>
+<nav>
+<h3><a href="/rzd/">Главная</a></h3>
+<h3><a href="/rzd/doroga_list">Дороги</a></h3>
+<h3><a href="/rzd/region_list">Регионы</a></h3>
+<h3><a href="/rzd/station_list">Станции</a></h3>
+</nav>
+<section>
+{% block content %}
+{% endblock %}
+</section>
+</body>
+</html>

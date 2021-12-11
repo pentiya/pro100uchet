@@ -1,39 +1,50 @@
 from django.shortcuts import render
 from django.views.generic import ListView
+from django.views.generic.edit import CreateView
 
 # Create your views here.
+
+from django_tables2 import SingleTableView
+
+from .models import Doroga
+from .models import Region
+from .models import Station
+#from rzd.models import Zdanie
+
+from .forms import DorogaForm
+from .forms import RegionForm
+
+from .tables import StationTable
+
 
 #def index(request):
 #    return HttpResponse("Hello, world. You're at the polls index.")
 
-from django_tables2 import SingleTableView
 
-#from rzd.models import Doroga
-from rzd.models import Region
-from .models import Station
-#from rzd.models import Zdanie
+def doroga_list(request):
+    dorogas = Doroga.objects.all()
+    return render(request, 'doroga_list.html', {'dorogas':dorogas})
+
+def region_list(request):
+    regions = Region.objects.all()
+    return render(request, 'region_list.html', {'regions':regions})
 
 def station_list(request):
     stations = Station.objects.all()
     return render(request, 'station_list.html', {'stations':stations})
 #    return render(request, 'station_list.html', {'station': Station.objects.all()})
 
-def region_list(request):
-    regions = Region.objects.all()
-    return render(request, 'region_list.html', {'regions':regions})
+class StationListView(ListView):
+    model = Station
+#    template_name = 'station_list.html'
+#    queryset = Station.objects.all().order_by('name')
 
-
-from .tables import StationTable
-
-class StationListView(SingleTableView):
+class StationTableView(SingleTableView):
     model = Station
     table = StationTable
     template_name = 'station_table.html'
 
 
-#def doroga_list(request):
-#    dorogas = Doroga.objects.all()
-#    return render(request, 'doroga_list.html', {'dorogas':dorogas})
 
 #class DorogaListView(ListView):
 #    model = Doroga
@@ -44,3 +55,21 @@ class StationListView(SingleTableView):
 #    model = Region
 #    template_name = 'Region.html'
 #    queryset = Service.objects.all().order_by('name')
+
+class RegionCreateView(CreateView):
+    template_name = 'region_create.html'
+    form_class = RegionForm
+    success_url = 'region_list/'
+
+
+
+'''
+class DorogaCreateView(CreateView):
+    template_name = 'doroga_create.html'
+    form_class = Doroga
+    success_url = '/station/'
+    def get_context_data(self, **kwargs):
+	context = super().get_context_data(**kwargs)
+	context[’dorogas’] = Doroga.objects.all()
+	return context
+'''
