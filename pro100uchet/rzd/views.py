@@ -14,12 +14,13 @@ from .models import Station
 from .forms import DorogaForm
 from .forms import RegionForm
 
+from .tables import RegionTable
 from .tables import StationTable
 
 
-#def index(request):
+def rzd_index(request):
 #    return HttpResponse("Hello, world. You're at the polls index.")
-
+    return render(request, 'rzd_index.html')
 
 def doroga_list(request):
     dorogas = Doroga.objects.all()
@@ -34,27 +35,30 @@ def station_list(request):
     return render(request, 'station_list.html', {'stations':stations})
 #    return render(request, 'station_list.html', {'station': Station.objects.all()})
 
+class DorogaListView(ListView):
+    model = Doroga
+    template_name = 'doroga_list.html'
+    context_object_name = 'dorogas' # default station_list
+#    queryset = Service.objects.all().order_by('kod')
+
 class StationListView(ListView):
     model = Station
-#    template_name = 'station_list.html'
-#    queryset = Station.objects.all().order_by('name')
+    template_name = 'station_list.html' #default rzd/station_list.html
+    context_object_name = 'stations' # default station_list
+
+class RegionListView(ListView):
+    model = Region
 
 class StationTableView(SingleTableView):
     model = Station
     table = StationTable
     template_name = 'station_table.html'
 
-
-
-#class DorogaListView(ListView):
-#    model = Doroga
-#    template_name = 'doroga.html'
-#    queryset = Service.objects.all().order_by('kod')
-#
-#class RegionListView(ListView):
-#    model = Region
-#    template_name = 'Region.html'
-#    queryset = Service.objects.all().order_by('name')
+class RegionTableView(SingleTableView):
+    model = Region
+    table = RegionTable
+    template_name = 'region_table.html'
+#    queryset = Region.objects.all().order_by('kod')
 
 class RegionCreateView(CreateView):
     template_name = 'region_create.html'

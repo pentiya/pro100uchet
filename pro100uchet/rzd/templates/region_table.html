@@ -1,15 +1,15 @@
-{# rzd/templates/station_table.html #}
+{# rzd/templates/region_table.html #}
 {% extends "rzd_base.html" %}
 
 {% load render_table from django_tables2 %}
 {% load static %}
 
-{% block title %}Станции
+{% block title %}Регионы
 <!--link rel="stylesheet" href="{% static 'django_tables2/themes/paleblue/css/screen.css' %}" /-->
 {% endblock %}
 
 {% block content %}
-<h3>Станции</h3>
+<h3>Регионы</h3>
 {% render_table table %}
 {% endblock %}
 

@@ -1,0 +1,22 @@
+{% extends "rzd_base.html" %}
+
+{% block title %} Станции {% endblock %}
+
+{% block content %}
+    <h3>Станции</h3>
+
+    {% if station_list %}
+
+	{% for station in station_list %}
+	<li>
+	    <a href="">{{ station.name }} ( {{ station.kod }} )</a>
+	    <a href="{% url 'region_list' %}">{{ station.region }}</a>
+	    <a href="rivc_list">{{ station.rvc }}</a>
+	</li>
+	{% endfor %}
+
+    {% else %}
+	<p>Нет станцций</p>
+    {% endif %}
+
+{% endblock %}
