@@ -32,16 +32,17 @@ margin-left: 170px;
 <h2>РЖД Справочники</h2>
 </header>
 <nav>
-<h3><a href="/rzd/">Главная</a></h3>
-<h3><a href="/rzd/doroga_list">Дороги</a></h3>
-<h3><a href="/rzd/region_list">Регионы</a></h3>
-<h3><a href="/rzd/station_list">Станции</a></h3>
+<a href="{% url 'rzd_index' %}">Главная</a>
 
-<h3><a href="/rzd/region_listview">Регионы(list.view)</a></h3>
-<h3><a href="/rzd/station_listview">Станции(list.view)</a></h3>
+<a href="{% url 'doroga_list' %}">Дороги</a>
+<a href="{% url 'region_list' %}">Регионы</a>
+<a href="{% url 'station_list' %}">Станции</a>
 
-<h3><a href="/rzd/region_tableview">Регионы(table.view)</a></h3>
-<h3><a href="/rzd/station_tableview">Станции(table.view)</a></h3>
+<a href="{% url 'region_listview' %}">Регионы(list.view)</a>
+<a href="{% url 'station_listview' %}">Станции(list.view)</a>
+
+<a href="{% url 'region_tableview' %}">Регионы(table.view)</a>
+<a href="{% url 'station_tableview' %}">Станции(table.view)</a>
 
 </nav>
 <section>

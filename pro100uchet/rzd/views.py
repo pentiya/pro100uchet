@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
 
 # Create your views here.
@@ -46,8 +46,18 @@ class StationListView(ListView):
     template_name = 'station_list.html' #default rzd/station_list.html
     context_object_name = 'stations' # default station_list
 
+
+class StationDetailView(DetailView):
+    model = Station
+    template_name = 'station_detail.html' #default rzd/station_detail.html
+
+
 class RegionListView(ListView):
     model = Region
+
+class RegionDetailView(DetailView):
+    model = Region
+
 
 class StationTableView(SingleTableView):
     model = Station

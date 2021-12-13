@@ -1,9 +1,9 @@
 {% extends "rzd_base.html" %}
 
-{% block title %} Станции {% endblock %}
+{% block title %} Станция {{station.name}} {% endblock %}
 
 {% block content %}
-<h3>Станции</h3>
+<h3>Станция {{station.name}} </h3>
 
 {% for station in stations %}
 <div>

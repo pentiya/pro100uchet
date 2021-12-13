@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<h3><a href="/rzd/region_add">Добавить регион</a></h3>
+<a href="{% url 'region_add' %}">Добавить регион</a>
 
 {% for region in regions %}
 <div>
