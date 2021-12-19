@@ -1,9 +1,11 @@
+{% load bootstrap4 %}
 {% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>{% block title %}Главная{% endblock %}Pro100uchet</title>
+<meta name="viewport" content="width=device-width, initial-scale=l, shrink-to-fit=no">
+<title>{% block title %}РЖД Главная{% endblock %}Pro100uchet</title>
 <!--link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"-->
 <style type="text/css">
 header h1 {
@@ -28,9 +30,14 @@ margin-left: 170px;
 </style>
 </head>
 <body>
-<header>
-<h2>РЖД Справочники</h2>
+
+<body class="container-fluid">
+<header class="mb-4">
+<h1 class="display-1 tех1-сеп1ег">РЖД Справочники</h1>
 </header>
+
+
+
 <nav>
 <a href="{% url 'rzd_index' %}">Главная</a>
 
