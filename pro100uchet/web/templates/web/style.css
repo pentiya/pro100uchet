@@ -1,0 +1,27 @@
+header {
+  border: black 2px solid;
+}
+
+main nav {
+  display: inline-block;
+  width: 200px;
+  border: black 2px solid;
+  margin-right: 10px;
+  padding: 10px 20px;
+  float: left;
+}
+
+main nav ul {
+  padding: 0;
+}
+
+main nav ul li {
+  list-style-type: none;
+}
+
+main .content {
+  display: inline-block;
+  width: 500px;
+  border: black 2px solid;
+  float: left;
+}

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_tables2',
     'bootstrap4',
+    'web',
     'rzd',
     'gvc',
     'device',
@@ -128,3 +129,24 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Bootstrap local use
+BOOTSTRAP4 = {
+
+    "css_url": {
+        "href": "/static/bootstrap-4.6.1-dist/css/bootstrap.min.css",
+    },
+
+    "javascript_url": {
+        "url": "/static/bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js",
+    },
+
+    "jquery_url": {
+        "url": "/static/jquery/jquery-3.5.1.min.js",
+    },
+
+    "jquery_slim_url": {
+        "url": "/static/jquery/jquery-3.5.1.slim.min.js",
+    },
+
+}

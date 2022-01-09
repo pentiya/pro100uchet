@@ -10,7 +10,7 @@ from rzd.views import StationTableView
 from rzd.views import RegionCreateView
 
 urlpatterns = [
-    path('', views.rzd_index, name='rzd_index'),
+#    path('', views.rzd_index, name='rzd_index'),
 #    path('', views.region_list, name='region_list'),
     path('doroga_list/', views.doroga_list, name='doroga_list'),
     path('region_list/', views.region_list, name='region_list'),
