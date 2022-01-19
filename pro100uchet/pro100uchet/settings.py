@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_tables2',
     'bootstrap4',
+    'leaflet',
     'web',
     'rzd',
     'gvc',
@@ -150,3 +151,14 @@ BOOTSTRAP4 = {
     },
 
 }
+
+LEAFLET_CONFIG = {
+    'SPATIAL_EXTENT': (27.0, 55.0, 50.0, 70.0),
+#    'DEFAULT_CENTER': (6.0, 45.0),
+#    'DEFAULT_ZOOM': 16,
+    'MIN_ZOOM': 5,
+    'MAX_ZOOM': 19,
+#    'DEFAULT_PRECISION': 6,
+    'ATTRIBUTION_PREFIX': 'SPb IVC'
+}
+

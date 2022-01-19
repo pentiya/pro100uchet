@@ -22,6 +22,10 @@ def rzd_index(request):
 #    return HttpResponse("Hello, world. You're at the polls index.")
     return render(request, 'rzd_index.html')
 
+def rzd_map(request):
+    stations = Station.objects.all()
+    return render(request, 'rzd-map.html', {'stations': stations})
+
 def doroga_list(request):
     dorogas = Doroga.objects.all()
     return render(request, 'doroga_list.html', {'dorogas':dorogas})

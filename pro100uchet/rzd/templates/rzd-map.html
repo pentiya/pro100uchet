@@ -1,0 +1,21 @@
+{% extends "web/web-base.html" %}
+{% load leaflet_tags %}
+
+{% block title %} Станции {% endblock %}
+
+{% block content %}
+
+<script>
+function map_init_basic (map, options) {
+    L.marker([63.81563568, 34.25279999]).addTo(map);
+    {% if stations %}
+	{% for station in stations %}
+            L.marker([{{ station.lat|replace(',', '.') }}, {{ station.lon|replace(',', '.') }}]).addTo(map);
+	{% endfor %}
+    {% endif %}
+}
+</script>
+
+{% leaflet_map "yourmap" callback="window.map_init_basic" %}
+
+{% endblock %}

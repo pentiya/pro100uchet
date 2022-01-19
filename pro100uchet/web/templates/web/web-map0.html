@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width", initial-scale=1.0, shrink-to-fit="no">
 <meta name="description" content="Про100учет - Простой учет для отдела СТО">
-<title>{% block title %}Главная{% endblock %} - Про100учет</title>
+<title>{% block title %}Map{% endblock %} - Про100учет</title>
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='slim' %}
 {% leaflet_js %}
@@ -24,6 +24,7 @@
 {% include "web/web-nav.html" %}
 <div  class="content">
 {% bootstrap_messages %}
+{% leaflet_map "yourmap" %}
 {% block content %}
 {% endblock %}
 </div>

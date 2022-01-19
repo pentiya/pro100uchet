@@ -7,4 +7,5 @@ from . import views
 
 urlpatterns = [
     path('', views.web_index, name='web_index'),
+    path('map', views.map_index, name='web_map'),
 ]
