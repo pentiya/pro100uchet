@@ -1,33 +1,25 @@
 {% load bootstrap4 %}
-{% load leaflet_tags %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width", initial-scale=1.0, shrink-to-fit="no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Про100учет - Простой учет для отдела СТО">
 <title>{% block title %}Главная{% endblock %} - Про100учет</title>
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='slim' %}
-{% leaflet_js %}
-{% leaflet_css %}
 <!--disabled in debug link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"-->
 <!-- not wor link rel="stylesheet" type="text/css" href="/style.css"-->
-<style type="text/css" media="screen">
+<style>
 {% include "web/style.css" %}
 </style>
 </head>
-<body class="container-fluid">
-{% include "web/web-header.html" %}
-<main>
+<body>
 {% include "web/web-nav.html" %}
-<div  class="content">
 {% bootstrap_messages %}
-{% block content %}
-{% endblock %}
+<div id="content">
+{% block content %}{% endblock %}
 </div>
-</main>
-{% include "web/web-footer.html" %}
 </body>
 </html>

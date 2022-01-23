@@ -1,27 +1,20 @@
-header {
-  border: black 2px solid;
+.navbar{
+# background:#F97300;
 }
-
-main nav {
-  display: inline-block;
-  width: 200px;
-  border: black 2px solid;
-  margin-right: 10px;
-  padding: 10px 20px;
-  float: left;
+.nav-link , .navbar-brand{
+# color: #f4f4f4;
+ cursor: pointer;
 }
-
-main nav ul {
-  padding: 0;
+.nav-link{
+ margin-right: 1em !important;
 }
-
-main nav ul li {
-  list-style-type: none;
+.nav-link:hover{
+# background: #f4f4f4;
+# color: #f97300;
 }
-
-main .content {
-  display: inline-block;
-  width: 500px;
-  border: black 2px solid;
-  float: left;
+.navbar-collapse{
+ justify-content: flex-end;
+}
+.navbar-toggler{
+#  background:#fff !important;
 }

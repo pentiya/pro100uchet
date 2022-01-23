@@ -1,36 +1,25 @@
-<nav class="navbar navbar-expand-lg">
-<div class="collapse navbar-collapse">
-<ul class="navbar-nav mr-auto">
-<li class="nav-item">
-<a class="nav-link" href="{% url 'web_index' %}">Главная</a>
-</li>
-<li class="nav-item">
-РЖД
-</li>
-<li class="nav-item">
-<a class="nav-link" href="{% url 'web_map' %}">Карта</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="{% url 'doroga_list' %}">Дороги</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="{% url 'region_list' %}">Регионы</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="{% url 'station_list' %}">Станции</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="{% url 'region_listview' %}">Регионы(list.view)</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="{% url 'station_listview' %}">Станции(list.view)</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="{% url 'region_tableview' %}">Регионы(table.view)</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="{% url 'station_tableview' %}">Станции(table.view)</a>
-</li>
-</ul>
-</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
+  <a class="navbar-brand" href="/">Главная</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+     <ul class="navbar-nav mr-4">
+       <li class="nav-item">
+         <a class="nav-link" href="#">Станции</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link " href="#">Узлы</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link " href="#">Карта</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link " href="#">Post</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link " href="#">Contact</a>
+       </li>
+     </ul>
+   </div>
 </nav>
