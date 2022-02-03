@@ -36,7 +36,17 @@ def region_list(request):
 
 def station_list(request):
     stations = Station.objects.all()
-    return render(request, 'station_list.html', {'stations':stations})
+    data = []
+    data.append( {'name':'11', 'kod':'12'} )
+    data.append( {'name':'21', 'kod':'22'} )
+    for ss in stations:
+      data.append( {'name': ss, 'kod':'22'} )
+
+    #data.append(['name' : '2'])
+    #[]
+    #"1","2","3"
+    #}
+    return render(request, 'station_list.html', {'data':data})
 #    return render(request, 'station_list.html', {'station': Station.objects.all()})
 
 class DorogaListView(ListView):

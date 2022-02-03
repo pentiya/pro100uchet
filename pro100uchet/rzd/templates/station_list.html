@@ -3,20 +3,20 @@
 {% block title %} Станции {% endblock %}
 
 {% block content %}
+  <div>
     <h3>Станции</h3>
 
-    {% if stations %}
+  {% if data %}
 
-	{% for station in stations %}
-	<li>
-	    <a href="">{{ station.name }} ( {{ station.kod }} )</a>
-	    <a href="{% url 'region_list' %}">{{ station.region }}</a>
-	    <a href="rivc_list">{{ station.rvc }}</a>
-	</li>
-	{% endfor %}
+    {{ data }}
+	  {% for dd in data %}
+	    <div>
+	    {{dd}} {{ dd.name }}  {{ dd.kod }}
+	    </div>
+	  {% endfor %}
 
     {% else %}
-	<p>Нет станций</p>
+	    <p>Нет данных</p>
     {% endif %}
-
+  </div>
 {% endblock %}
