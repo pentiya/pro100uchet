@@ -1,0 +1,28 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+{% load bootstrap4 %}
+{% load leaflet_tags %}
+
+{% block title %}Карта{% endblock %}
+
+{% block head %}
+  {% leaflet_js %}
+  {% leaflet_css %}
+  <link rel="stylesheet" href="{% static 'main/css/map.css' %}">
+{% endblock%}
+
+<div  class="content">
+{% bootstrap_messages %}
+{% block content %}
+
+<script>
+function map_init_basic (map, options) {
+    L.marker([63.81563568, 34.25279999]).addTo(map);
+}
+</script>
+
+{% leaflet_map "map" callback="window.map_init_basic" %}
+
+{% endblock %}
+</div>

@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.shortcuts import render, redirect
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView
+#DetailView для отображения динамической страницы
 from django.views.generic.edit import CreateView
 
 # Create your views here.
@@ -18,21 +19,69 @@ from .tables import RegionTable
 from .tables import StationTable
 
 
-def rzd_index(request):
+def index(request):
 #    return HttpResponse("Hello, world. You're at the polls index.")
-    return render(request, 'rzd_index.html')
+    return render(request, 'main/index.html')
 
 def rzd_map(request):
     stations = Station.objects.all()
     return render(request, 'rzd-map.html', {'stations': stations})
 
+#отображение на основе функции
 def doroga_list(request):
     dorogas = Doroga.objects.all()
-    return render(request, 'doroga_list.html', {'dorogas':dorogas})
+    return render(request, 'rzd/doroga_list.html', {'dorogas':dorogas})
+
+##отображение на основе предопределенного класса
+#class DorogaListView(ListView):
+#    model = Doroga
+#    template_name = 'rzd/doroga_list.html'
+#    context_object_name = 'dorogas' # default doroga_list
+##    queryset = Service.objects.all().order_by('kod')
+
+def doroga_add(request):
+    error = ''
+    if request.method == 'POST':        # нажата кнопка Добавить
+        form = DorogaForm(request.POST) # получаем данные с формы ввода
+        if form.is_valid(): #проверяем корректность данных
+            form.save()
+            return redirect('doroga') #need import redirect
+        else:
+            error = 'Форма неверна'
+
+    form = DorogaForm()
+    data = {
+      'form': form,
+      'error': error,
+    }
+    return render(request, 'rzd/doroga_create.html', data)
+
+class DorogaDetailView(DetailView):
+    model = Doroga
+    template_name = 'rzd/doroga_detail.html'
+    context_object_name = 'doroga' #название ключа, по которому запись передантся внутрь шаблона
+
+class DorogaUpdateView(UpdateView):
+    model = Doroga
+    template_name = 'rzd/doroga_create.html'
+    #fields = ['name', 'short_name', 'kod'] #use form_class
+    form_class = DorogaForm
+
+class DorogaDeleteView(DeleteView):
+    model = Doroga
+    success_url = '/rzd/doroga/'
+    template_name = 'rzd/doroga_delete.html'
 
 def region_list(request):
     regions = Region.objects.all()
-    return render(request, 'region_list.html', {'regions':regions})
+    return render(request, 'rzd/region_list.html', {'regions':regions})
+
+def region_add(request):
+    form = RegionForm()
+    data = {
+      'form': form,
+    }
+    return render(request, 'rzd/region_add.html', data)
 
 def station_list(request):
     stations = Station.objects.all()
@@ -48,12 +97,6 @@ def station_list(request):
     #}
     return render(request, 'station_list.html', {'data':data})
 #    return render(request, 'station_list.html', {'station': Station.objects.all()})
-
-class DorogaListView(ListView):
-    model = Doroga
-    template_name = 'doroga_list.html'
-    context_object_name = 'dorogas' # default station_list
-#    queryset = Service.objects.all().order_by('kod')
 
 class StationListView(ListView):
     model = Station

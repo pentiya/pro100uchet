@@ -2,10 +2,10 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def web_index(request):
+def index(request):
 #    return HttpResponse("Hello, world. You're at the polls index.")
-    return render(request, 'web/web-index.html')
+    return render(request, 'main/index.html')
 
-def map_index(request):
+def map(request):
 #    return HttpResponse("Hello, world. You're at the polls index.")
-    return render(request, 'web/web-map.html')
+    return render(request, 'main/map.html')

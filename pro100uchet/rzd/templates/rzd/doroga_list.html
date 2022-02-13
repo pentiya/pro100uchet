@@ -1,0 +1,19 @@
+{% extends "main/base.html" %}
+
+{% block title %}РЖД - Дороги{% endblock %}
+
+{% block content %}
+  <div class="features">
+    <h1> РЖД Дороги</h1>
+    {% if dorogas %}
+      {% for doroga in dorogas %}
+        <div class="alert alert-warning">
+          <h3><a href="{% url 'doroga_view' doroga.id %}">{{ doroga }} ({{ doroga.short_name }})</a></h3>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>Нет записей</p>
+    {% endif %}
+    <a href="{% url 'doroga_add' %}"><button class="btn btn-info">Добавить дорогу</button></a>
+  </div>
+{% endblock %}

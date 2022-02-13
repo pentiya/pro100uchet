@@ -1,0 +1,13 @@
+{% extends "main/base.html" %}
+
+{% block title %}{{ doroga.name }}{% endblock %}
+
+{% block content %}
+  <div class="features">
+    <h1>{{ doroga.name }}</h1>
+    <p>{{ doroga.name }} {{ doroga.short_name }} {{ doroga.kod }}</p>
+    <a href="{% url 'doroga' %}"><button class="btn btn-info">Вернуться в список</button></a>
+    <a href="{% url 'doroga_update' doroga.id %}"><button class="btn btn-warning">Изменить</button></a>
+    <a href="{% url 'doroga_delete' doroga.id %}"><button class="btn btn-danger">Удалить</button></a>
+  </div>
+{% endblock %}

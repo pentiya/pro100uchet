@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django_tables2',
     'bootstrap4',
     'leaflet',
-    'web',
+    'main',
     'rzd',
     'gvc',
     'device',

@@ -9,14 +9,13 @@
 <title>{% block title %}Главная{% endblock %} - Про100учет</title>
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='slim' %}
-<!--disabled in debug link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"-->
-<!-- not wor link rel="stylesheet" type="text/css" href="/style.css"-->
-<style>
-{% include "web/style.css" %}
-</style>
+{% block head %}{% endblock %}
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+<link rel="stylesheet" href="{% static 'main/css/nav.css' %}">
+<!--disabled in debug link rel="stylesheet" href="{% static 'style.css' %}"-->
 </head>
 <body>
-{% include "web/web-nav.html" %}
+{% include "main/nav.html" %}
 {% bootstrap_messages %}
 <div id="content">
 {% block content %}{% endblock %}

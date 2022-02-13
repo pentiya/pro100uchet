@@ -1,0 +1,23 @@
+{% extends "main/base.html" %}
+
+{% block title %}РЖД - Дороги{% endblock %}
+
+{% block content %}
+  <div class="features">
+    <h1> РЖД Дороги</h1>
+    {% if dorogas %}
+      {% for doroga in dorogas %}
+        <div class="alert alert-warning">
+          <h3>{{ doroga }}</h3>
+          <!--h3><a href="{% url 'doroga_view' doroga_id %}">{{ doroga }} ({{doroga.kod}})</a>{{ doroga }}</h3-->
+          <p>{{ doroga.name }} {{ doroga.short_name }} {{ doroga.kod }}</p>
+          {# <a href="{% url 'doroga_view' doroga.id %}"><button class="btn btn-info">Подробнее</button></a> #}
+          <!--a href="{% url 'station' %}">{{ doroga }} ({{doroga.kod}})</a-->
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>Нет записей</p>
+    {% endif %}
+    <a href="{% url 'doroga_add' %}"><button class="btn btn-info">Добавить дорогу</button></a>
+  </div>
+{% endblock %}

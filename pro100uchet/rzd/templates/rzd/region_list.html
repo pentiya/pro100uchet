@@ -1,0 +1,21 @@
+{% extends "main/base.html" %}
+
+{% block title %}Регионы{% endblock %}
+
+{% block content %}
+  <div class="features">
+    <h1> РЖД Регионы</h1>
+    {% if regions %}
+      {% for region in regions %}
+        <div class="alert alert-warning">
+          <h3>{{ region }}</h3>
+          <p>{{ region.name }}</p>
+          <!--a href="{% url 'station' %}">{{ region }} ({{region.kod}})</a-->
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>Нет записей</p>
+    {% endif %}
+    <a href="{% url 'region_add' %}"><button class="btn btn-info">Добавить регион</button></a>
+  </div>
+{% endblock %}

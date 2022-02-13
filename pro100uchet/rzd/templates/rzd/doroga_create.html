@@ -1,0 +1,28 @@
+{% extends "main/base.html" %}
+
+{% block title %}Дорога-добавить{% endblock %}
+
+{% block content %}
+  <div class="features">
+    <h1>Дорога-добавить</h1>
+<!--
+    <form method="post" action="region_check">
+method post
+action region_check - по этой ссылке действие по проверкн, добавить в urls
+или без action проверка на страце формы в методе views.region_add
+
+
+
+form conrol - от бутстрапа
+-->
+    <form method="post">
+      {% csrf_token %}
+      {{ form.name }}<br>
+      {{ form.short_name }}<br>
+      {{ form.kod }}<br>
+      <span>{{ error }}</span>
+      <button class="btn btn-success" type="submit">Записать</button>
+      <a href="{% url 'doroga' %}"><button class="btn btn-info">Вернуться в список</button></a>
+    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "main/base.html" %}
+
+{% block title %}Дорога-удаление{% endblock %}
+
+{% block content %}
+  <div class="features">
+    <h1>Дорога-удалить</h1>
+    <form method="post">
+      {% csrf_token %}
+      <h1>{{ doroga.name }}</h1>
+      <p>{{ doroga.name }} {{ doroga.short_name }} {{ doroga.kod }}</p>
+      <button class="btn btn-danger" type="submit">Удалить</button>
+      <a href="{% url 'doroga' %}"><button class="btn btn-info">Вернуться в список</button></a>
+    </form>
+  </div>
+{% endblock %}
