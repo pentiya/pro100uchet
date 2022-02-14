@@ -1,10 +1,10 @@
 {% extends "main/base.html" %}
 
-{% block title %}РЖД - Дороги{% endblock %}
+{% block title %}{{title}}{% endblock %}
 
 {% block content %}
   <div class="features">
-    <h1> РЖД Дороги</h1>
+    <h1>{{title}}</h1>
     {% if dorogas %}
       {% for doroga in dorogas %}
         <div class="alert alert-warning">

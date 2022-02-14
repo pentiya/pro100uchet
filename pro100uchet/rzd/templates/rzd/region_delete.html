@@ -1,0 +1,16 @@
+{% extends "main/base.html" %}
+
+{% block title %}Дорога-удаление{% endblock %}
+
+{% block content %}
+  <div class="features">
+    <h1>Дорога-удалить</h1>
+    <form method="post">
+      {% csrf_token %}
+      <h1>{{ region.name }}</h1>
+      <p>{{ region.name }} {{ region.short_name }} {{ region.kod }}</p>
+      <button class="btn btn-danger" type="submit">Удалить</button>
+      <a href="{% url 'region' %}"><button class="btn btn-info">Вернуться в список</button></a>
+    </form>
+  </div>
+{% endblock %}

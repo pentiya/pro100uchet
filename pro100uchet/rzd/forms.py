@@ -5,6 +5,7 @@ from django.forms import ModelForm, TextInput, NumberInput
 
 from .models import Doroga
 from .models import Region
+from .models import Station
 
 class DorogaForm(ModelForm):
     class Meta:
@@ -21,8 +22,19 @@ class RegionForm(ModelForm):
     class Meta:
         model = Region
         fields = ['name', 'kod', 'doroga']
-        widgets = {
-          "name": TextInput(attrs={ 'class': 'form-control', 'placeholder': 'Название региона', }),
-          "kod":  NumberInput(attrs={ 'class': 'form-control', 'placeholder': 'Код региона', }),
-#          "doroga":  FieldInput(attrs={ 'class': 'form-control', 'placeholder': 'Код региона', }),
-        }
+#        widgets = {
+#          "name": TextInput(attrs={ 'class': 'form-control', 'placeholder': 'Название региона', }),
+#          "kod":  NumberInput(attrs={ 'class': 'form-control', 'placeholder': 'Код региона', }),
+##          "doroga":  FieldInput(attrs={ 'class': 'form-control', 'placeholder': 'Код региона', }),
+#        }
+
+
+class StationForm(ModelForm):
+    class Meta:
+        model = Station
+        fields = ['name', 'kod', 'region', 'rvc', 'csvt']
+#        widgets = {
+#          "name": TextInput(attrs={ 'class': 'form-control', 'placeholder': 'Название региона', }),
+#          "kod":  NumberInput(attrs={ 'class': 'form-control', 'placeholder': 'Код региона', }),
+##          "doroga":  FieldInput(attrs={ 'class': 'form-control', 'placeholder': 'Код региона', }),
+#        }

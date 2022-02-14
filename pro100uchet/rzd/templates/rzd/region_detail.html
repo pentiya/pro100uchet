@@ -1,0 +1,13 @@
+{% extends "main/base.html" %}
+
+{% block title %}{{ region.name }}{% endblock %}
+
+{% block content %}
+  <div class="features">
+    <h1>{{ region.name }}</h1>
+    <p>{{ region.name }} {{ region.short_name }} {{ region.kod }}</p>
+    <a href="{% url 'region' %}"><button class="btn btn-info">Вернуться в список</button></a>
+    <a href="{% url 'region-update' region.id %}"><button class="btn btn-warning">Изменить</button></a>
+    <a href="{% url 'region-delete' region.id %}"><button class="btn btn-danger">Удалить</button></a>
+  </div>
+{% endblock %}

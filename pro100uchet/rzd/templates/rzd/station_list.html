@@ -1,0 +1,38 @@
+{% extends "main/base.html" %}
+
+{% block title %} Станции {% endblock %}
+
+{% block content %}
+  <div class="features">
+    <h3>Станции</h3>
+    {% if object_list %}
+      {% for object in page_obj %}
+        <div>
+          <a href="{% url 'station-view' object.id %}">{{ object.name }} ({{ object.region.name }})</a>
+        </div>
+      {% endfor %}
+
+      <div class="pagination">
+        <span class="step-links">
+          {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; На первую</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
+          {% endif %}
+
+          <span class="current">
+            Страница {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+          </span>
+
+          {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Следующая</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">На последнюю &raquo;</a>
+          {% endif %}
+        </span>
+      </div>
+
+    {% else %}
+      <p>Нет записей</p>
+    {% endif %}
+    <a href="{% url 'station-add' %}"><button class="btn btn-info">Добавить</button></a>
+  </div>
+{% endblock %}

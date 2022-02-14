@@ -19,12 +19,14 @@ class Doroga(models.Model):
         verbose_name_plural = 'Дороги'
 
 
-
 class Region(models.Model):
     name = models.CharField('Название региона',max_length=255,)
     kod  = models.IntegerField('Код региона',default=0)
 #    doroga = models.ForeignKey('Doroga', on_delete=models.PROTECT, blank=True, null=True)
     doroga = models.ForeignKey(Doroga, on_delete=models.PROTECT)
+
+    def get_absolute_url(self): #куда переадресовывать после изменения
+        return f'/rzd/region/{self.id}'
 
     class Meta:
         ordering = ('name',)
@@ -43,6 +45,9 @@ class Station(models.Model):
     rvc = models.IntegerField('РВЦ',default=0)
     lon = models.FloatField('Долгота',default=0)
     lat = models.FloatField('Широта',default=0)
+
+    def get_absolute_url(self): #куда переадресовывать после изменения
+        return f'/rzd/station/{self.id}'
 
     class Meta:
         ordering = ('name',)
