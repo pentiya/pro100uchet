@@ -36,8 +36,8 @@ def doroga_list(request):
 #отображение на основе предопределенного класса
 class DorogaListView(ListView):
     model = Doroga
-    template_name = 'rzd/doroga_list.html'
-    context_object_name = 'dorogas' # default doroga_list
+    #template_name = 'rzd/doroga_list.html' #default: <app-name>rzd/<model-name>_list.html = rzd/goroga_list.html
+    context_object_name = 'dorogas' #название ключа, по которому запись передается внутрь шаблона, default: object_list
 #    queryset = Service.objects.all().order_by('kod')
 
 def doroga_add(request):
@@ -138,8 +138,8 @@ class StationListView(ListView):
 
 class StationTableView(SingleTableView):
     model = Station
-    table = StationTable
-    template_name = 'station_table.html'
+    #table = StationTable
+    #template_name = 'station_table.html'
 
 class StationDetailView(DetailView):
     model = Station
